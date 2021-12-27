@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { LineStyle, Timeline, TrendingUp, PermIdentity, Storefront, LocalAtm, Assessment, Drafts, Feedback, Forum, Work, Receipt, PieChart } from '@material-ui/icons';
 import styled, { css } from 'styled-components';
 
@@ -91,10 +92,12 @@ const SideBar = () => {
         <SidebarMenu>
           <SidebarTitle>Dashboard</SidebarTitle>
           <SidebarList>
-            <SidebarListItem>
-              <MyLineStyle />
-              Home
-            </SidebarListItem>
+            <Link to="/" className="link">
+              <SidebarListItem>
+                <MyLineStyle />
+                Home
+              </SidebarListItem>
+            </Link>
             <SidebarListItem>
               <MyTimeline />
               Analytics
@@ -108,14 +111,18 @@ const SideBar = () => {
         <SidebarMenu>
           <SidebarTitle>All Menu</SidebarTitle>
           <SidebarList>
-            <SidebarListItem>
-              <MyPermIdentity />
-              Users
-            </SidebarListItem>
-            <SidebarListItem>
-              <MyStorefront />
-              Products
-            </SidebarListItem>
+            <Link to="/users" className="link">
+              <SidebarListItem>
+                <MyPermIdentity />
+                Users
+              </SidebarListItem>
+            </Link>
+            <Link to="/products" className="link">
+              <SidebarListItem>
+                <MyStorefront />
+                Products
+              </SidebarListItem>
+            </Link>
             <SidebarListItem>
               <MyAssessment />
               Reports
